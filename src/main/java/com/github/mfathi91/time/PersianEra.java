@@ -1,14 +1,12 @@
 package com.github.mfathi91.time;
 
 import net.jcip.annotations.Immutable;
-
 import java.time.DateTimeException;
 import java.time.chrono.Era;
 import java.time.temporal.ChronoField;
 import java.time.temporal.TemporalField;
 import java.time.temporal.UnsupportedTemporalTypeException;
 import java.time.temporal.ValueRange;
-
 import static java.time.temporal.ChronoField.ERA;
 
 /**
@@ -45,11 +43,7 @@ public enum PersianEra implements Era {
      * @throws DateTimeException if the value is invalid
      */
     public static PersianEra of(int persianEra) {
-        if (persianEra == 1 ) {
-            return AHS;
-        } else {
-            throw new DateTimeException("Invalid era: " + persianEra);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     //-----------------------------------------------------------------------
@@ -62,7 +56,7 @@ public enum PersianEra implements Era {
      */
     @Override
     public int getValue() {
-        return 1;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     //-----------------------------------------------------------------------
@@ -90,12 +84,9 @@ public enum PersianEra implements Era {
      * @throws DateTimeException if the range for the field cannot be obtained
      * @throws UnsupportedTemporalTypeException if the unit is not supported
      */
-    @Override  // override as super would return range from 0 to 1
+    // override as super would return range from 0 to 1
+    @Override
     public ValueRange range(TemporalField field) {
-        if (field == ERA) {
-            return ValueRange.of(1, 1);
-        }
-        return Era.super.range(field);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

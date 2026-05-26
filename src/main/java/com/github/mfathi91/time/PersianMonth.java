@@ -29,67 +29,56 @@ public enum PersianMonth {
      * This has the numeric value of {@code 1}.
      */
     FARVARDIN("فروردین"),
-
     /**
      * The singleton instance for the month of Ordibehesht with 31 days.
      * This has the numeric value of {@code 2}.
      */
     ORDIBEHESHT("اردیبهشت"),
-
     /**
      * The singleton instance for the month of Khordad with 31 days.
      * This has the numeric value of {@code 3}.
      */
     KHORDAD("خرداد"),
-
     /**
      * The singleton instance for the month of Tir with 31 days.
      * This has the numeric value of {@code 4}.
      */
     TIR("تیر"),
-
     /**
      * The singleton instance for the month of Mordad with 31 days.
      * This has the numeric value of {@code 5}.
      */
     MORDAD("مرداد"),
-
     /**
      * The singleton instance for the month of Shahrivar with 31 days.
      * This has the numeric value of {@code 6}.
      */
     SHAHRIVAR("شهریور"),
-
     /**
      * The singleton instance for the month of Mehr with 30 days.
      * This has the numeric value of {@code 7}.
      */
     MEHR("مهر"),
-
     /**
      * The singleton instance for the month of Aban with 30 days.
      * This has the numeric value of {@code 8}.
      */
     ABAN("آبان"),
-
     /**
      * The singleton instance for the month of Azar with 30 days.
      * This has the numeric value of {@code 9}.
      */
     AZAR("آذر"),
-
     /**
      * The singleton instance for the month of Dey with 30 days.
      * This has the numeric value of {@code 10}.
      */
     DEY("دی"),
-
     /**
      * The singleton instance for the month of Bahman with 30 days.
      * This has the numeric value of {@code 11}.
      */
     BAHMAN("بهمن"),
-
     /**
      * The singleton instance for the month of Farvardin with 29 days in non-leap year
      * and 30 days in leap year. This has the numeric value of {@code 12}.
@@ -108,7 +97,7 @@ public enum PersianMonth {
      * @return persian name of month.
      */
     public String getPersianName() {
-        return persianName;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -119,15 +108,14 @@ public enum PersianMonth {
      * @return instance of {@code Month} enum.
      */
     static PersianMonth of(int month) {
-        MyUtils.intRequireRange(month, 1, 12, "month");
-        return PersianMonth.values()[month - 1];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return number of month, from 1 (Farvardin) to 12 (Esfand)
      */
     public int getValue() {
-        return ordinal() + 1;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -140,8 +128,7 @@ public enum PersianMonth {
      * @return length of months of Persian calendar
      */
     public int length(boolean leapYear) {
-        int value = getValue();
-        return value < 7 ? 31 : (value != 12 ? 30 : (leapYear ? 30 : 29));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -151,7 +138,7 @@ public enum PersianMonth {
      * @return length of months of Persian calendar
      */
     public int maxLength() {
-        return length(true);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -162,7 +149,7 @@ public enum PersianMonth {
      * @return length of months of Persian calendar
      */
     public int minLength() {
-        return length(false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -175,10 +162,7 @@ public enum PersianMonth {
      * @return the resulting month, not null
      */
     public PersianMonth plus(long months) {
-        int amount = (int) (months % 12);
-        // For negative argument
-        amount = (amount + 12) % 12;
-        return PersianMonth.values()[(ordinal() + amount) % 12];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -191,7 +175,7 @@ public enum PersianMonth {
      * @return the resulting month, not null
      */
     public PersianMonth minus(long months) {
-        return plus(-months);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -200,7 +184,6 @@ public enum PersianMonth {
      * @return elapsed days from first of the year to first of this month.
      */
     public int daysToFirstOfMonth() {
-        int val = getValue();
-        return (val <= 6) ? (31 * (val - 1)) : ((30 * (val - 1 - 6)) + 186);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

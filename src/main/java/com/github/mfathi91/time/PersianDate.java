@@ -1,7 +1,6 @@
 package com.github.mfathi91.time;
 
 import net.jcip.annotations.Immutable;
-
 import java.time.*;
 import java.time.chrono.ChronoLocalDate;
 import java.time.chrono.ChronoPeriod;
@@ -9,7 +8,6 @@ import java.time.chrono.Chronology;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.*;
 import java.util.Objects;
-
 import static java.time.temporal.ChronoField.*;
 
 /**
@@ -35,14 +33,12 @@ public final class PersianDate implements ChronoLocalDate {
     /**
      * The minimum supported persian date {@code 0001-01-01}.
      */
-    public static final PersianDate MIN =
-            PersianDate.of((int) PersianChronology.INSTANCE.range(YEAR).getMinimum(), 1, 1);
+    public static final PersianDate MIN = PersianDate.of((int) PersianChronology.INSTANCE.range(YEAR).getMinimum(), 1, 1);
 
     /**
      * The maximum supported persian date {@code 1999-12-29}.
      */
-    public static final PersianDate MAX =
-            PersianDate.of((int) PersianChronology.INSTANCE.range(YEAR).getMaximum(), 12, 29);
+    public static final PersianDate MAX = PersianDate.of((int) PersianChronology.INSTANCE.range(YEAR).getMaximum(), 12, 29);
 
     /**
      * 1970-01-01 to julian day.
@@ -93,7 +89,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @return the year
      */
     public int getYear() {
-        return year;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -101,7 +97,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @see #getMonthValue()
      */
     public PersianMonth getMonth() {
-        return PersianMonth.of(month);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -109,21 +105,21 @@ public final class PersianDate implements ChronoLocalDate {
      * @see #getMonth()
      */
     public int getMonthValue() {
-        return month;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return day-of-month, from 1 to 31
      */
     public int getDayOfMonth() {
-        return day;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return day-of-year, from 1 to 365 or 366 in a leap year
      */
     public int getDayOfYear() {
-        return PersianMonth.of(month).daysToFirstOfMonth() + day;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -134,8 +130,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @return day-of-week, which is an enum {@link DayOfWeek}
      */
     public DayOfWeek getDayOfWeek() {
-        int dow0 = Math.floorMod((int) toEpochDay() + 3, 7);
-        return DayOfWeek.of(dow0 + 1);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -144,7 +139,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @return current Persian date from the system clock in the default time zone
      */
     public static PersianDate now() {
-        return ofJulianDays(JulianFields.JULIAN_DAY.getFrom(LocalDate.now()));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -160,7 +155,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @throws DateTimeException if the passed parameters do not form a valid date or time.
      */
     public static PersianDate of(int year, int month, int dayOfMonth) {
-        return new PersianDate(year, month, dayOfMonth);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -173,8 +168,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @throws DateTimeException if the passed parameters do not form a valid date or time.
      */
     public static PersianDate of(int year, PersianMonth month, int dayOfMonth) {
-        Objects.requireNonNull(month, "month");
-        return new PersianDate(year, month.getValue(), dayOfMonth);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -185,8 +179,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @return an equivalent Persian date and time as an instance of {@link PersianDate}
      */
     public static PersianDate fromGregorian(LocalDate localDate) {
-        Objects.requireNonNull(localDate, "localDate");
-        return ofJulianDays(JulianFields.JULIAN_DAY.getFrom(localDate));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -197,7 +190,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @return an instance of {@code PersianDate} from the given text
      */
     public static PersianDate parse(final CharSequence text) {
-        return parse(text, DateTimeFormatter.ISO_LOCAL_DATE);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -208,8 +201,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @return an instance of {@code PersianDate} from the given text
      */
     public static PersianDate parse(final CharSequence text, final DateTimeFormatter formatter) {
-        Objects.requireNonNull(formatter, "formatter");
-        return formatter.withChronology(PersianChronology.INSTANCE).parse(text, PersianDate::from);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -220,8 +212,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @throws DateTimeException if unable to convert to a {@code PersianDate}
      */
     public static PersianDate from(final TemporalAccessor temporal) {
-        Objects.requireNonNull(temporal, "temporal");
-        return PersianChronology.INSTANCE.date(temporal);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -233,7 +224,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @return an instance of {@link PersianDate}
      */
     public static PersianDate ofEpochDay(long epochDays) {
-        return ofJulianDays(epochDays + JULIAN_DAY_TO_1970);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -246,32 +237,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @see <a href="https://github.com/soroush/libcalendars">libcalendars</a>
      */
     public static PersianDate ofJulianDays(long julianDays) {
-        final long offset = julianDays - PERSIAN_DATE_EPOCH;
-        long cycle_no = offset / CYCLE_DAYS;
-        if (offset < 0) {
-            --cycle_no;
-        }
-        final long cycleStart = PERSIAN_DATE_EPOCH + cycle_no * CYCLE_DAYS;
-        final int yc = (int) (Math.floor((julianDays - cycleStart) / YEAR_LENGTH));
-        long year = yc + 475 + cycle_no * 2820;
-        final long lll = PERSIAN_DATE_EPOCH + cycle_no * CYCLE_DAYS + (long) Math.floor((yc * YEAR_LENGTH));
-        long day = julianDays - lll + 1;
-        if (day > (isLeapYear((int) year) ? 366 : 365)) {
-            year++;
-            day = 1;
-        }
-        if (year <= 0) {
-            year--;
-        }
-        int month;
-        for (month = 1; month < 12; ++month) {
-            if (day > PersianMonth.of(month).length(isLeapYear((int) year))){
-                day -= PersianMonth.of(month).length(isLeapYear((int) year));
-            } else {
-                break;
-            }
-        }
-        return PersianDate.of((int) year, month, (int) day);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -299,7 +265,6 @@ public final class PersianDate implements ChronoLocalDate {
     }
 
     //-----------------------------------------------------------------------
-
     /**
      * Gets the chronology of this date, which is the Persian calendar system.
      * <p>
@@ -310,7 +275,7 @@ public final class PersianDate implements ChronoLocalDate {
      */
     @Override
     public Chronology getChronology() {
-        return PersianChronology.INSTANCE;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -322,8 +287,7 @@ public final class PersianDate implements ChronoLocalDate {
      */
     @Override
     public int lengthOfMonth() {
-        PersianMonth pm = PersianMonth.of(month);
-        return PersianChronology.INSTANCE.isLeapYear(year) ? pm.maxLength() : pm.minLength();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -375,40 +339,19 @@ public final class PersianDate implements ChronoLocalDate {
      */
     @Override
     public long until(Temporal endExclusive, TemporalUnit unit) {
-        Objects.requireNonNull(endExclusive, "endExclusive");
-        Objects.requireNonNull(unit, "unit");
-        PersianDate end = (PersianDate) getChronology().date(endExclusive);
-        if (unit instanceof ChronoUnit) {
-            switch ((ChronoUnit) unit) {
-                case DAYS:
-                    return daysUntil(end);
-                case WEEKS:
-                    return daysUntil(end) / 7;
-                case MONTHS:
-                    return monthsUntil(end);
-                case YEARS:
-                    return monthsUntil(end) / 12;
-                case DECADES:
-                    return monthsUntil(end) / 120;
-                case CENTURIES:
-                    return monthsUntil(end) / 1200;
-                case MILLENNIA:
-                    return monthsUntil(end) / 12000;
-                case ERAS:
-                    return end.getLong(ERA) - getLong(ERA);
-            }
-            throw new UnsupportedTemporalTypeException("Unsupported unit: " + unit);
-        }
-        return unit.between(this, end);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private long daysUntil(PersianDate end) {
-        return end.toEpochDay() - toEpochDay();  // no overflow
+        // no overflow
+        return end.toEpochDay() - toEpochDay();
     }
 
     private long monthsUntil(PersianDate end) {
-        long packed1 = getLong(PROLEPTIC_MONTH) * 32L + getDayOfMonth();  // no overflow
-        long packed2 = end.getLong(PROLEPTIC_MONTH) * 32L + end.getDayOfMonth();  // no overflow
+        // no overflow
+        long packed1 = getLong(PROLEPTIC_MONTH) * 32L + getDayOfMonth();
+        // no overflow
+        long packed2 = end.getLong(PROLEPTIC_MONTH) * 32L + end.getDayOfMonth();
         return (packed2 - packed1) / 32;
     }
 
@@ -446,21 +389,7 @@ public final class PersianDate implements ChronoLocalDate {
      */
     @Override
     public ChronoPeriod until(ChronoLocalDate endDateExclusive) {
-        Objects.requireNonNull(endDateExclusive, "endDateExclusive");
-        PersianDate end = PersianChronology.INSTANCE.date(endDateExclusive);
-        long totalMonths = end.getLong(PROLEPTIC_MONTH) - this.getLong(PROLEPTIC_MONTH);  // safe
-        int days = end.day - this.day;
-        if (totalMonths > 0 && days < 0) {
-            totalMonths--;
-            PersianDate calcDate = this.plusMonths(totalMonths);
-            days = (int) (end.toEpochDay() - calcDate.toEpochDay());  // safe
-        } else if (totalMonths < 0 && days > 0) {
-            totalMonths++;
-            days -= end.lengthOfMonth();
-        }
-        long years = totalMonths / 12;  // safe
-        int months = (int) (totalMonths % 12);  // safe
-        return Period.of(Math.toIntExact(years), months, days);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -488,37 +417,7 @@ public final class PersianDate implements ChronoLocalDate {
      */
     @Override
     public long getLong(TemporalField field) {
-        if (field instanceof ChronoField) {
-            switch ((ChronoField) field) {
-                case DAY_OF_WEEK:
-                    return getDayOfWeek().getValue();
-                case ALIGNED_DAY_OF_WEEK_IN_MONTH:
-                    return ((day - 1) % 7) + 1;
-                case ALIGNED_DAY_OF_WEEK_IN_YEAR:
-                    return ((getDayOfYear() - 1) % 7) + 1;
-                case DAY_OF_MONTH:
-                    return this.day;
-                case DAY_OF_YEAR:
-                    return this.getDayOfYear();
-                case EPOCH_DAY:
-                    return this.toEpochDay();
-                case ALIGNED_WEEK_OF_MONTH:
-                    return ((day - 1) / 7) + 1;
-                case ALIGNED_WEEK_OF_YEAR:
-                    return ((getDayOfYear() - 1) / 7) + 1;
-                case MONTH_OF_YEAR:
-                    return month;
-                case PROLEPTIC_MONTH:
-                    return (year * 12L + month - 1);
-                case YEAR_OF_ERA:
-                    return (year >= 1 ? year : 1 - year);
-                case YEAR:
-                    return year;
-                case ERA:
-                    return (year >= 1 ? 1 : 0);
-            }
-        }
-        throw new UnsupportedTemporalTypeException("Unsupported field: " + field);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -542,7 +441,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @throws DateTimeException if the result exceeds the supported date range
      */
     public PersianDate plusYears(long yearsToAdd) {
-        return plusMonths(yearsToAdd * 12);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -566,14 +465,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @throws DateTimeException if the result exceeds the supported date range
      */
     public PersianDate plusMonths(long monthsToAdd) {
-        if (monthsToAdd == 0) {
-            return this;
-        }
-        long monthCount = year * 12L + (month - 1);
-        long calcMonths = monthCount + monthsToAdd;
-        int newYear = (int) Math.floorDiv(calcMonths, 12L);
-        int newMonth = (int) Math.floorMod(calcMonths, 12L) + 1;
-        return resolvePreviousValid(newYear, newMonth, day);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -592,10 +484,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @throws DateTimeException if the result exceeds the supported date range
      */
     public PersianDate plusDays(long daysToAdd) {
-        if (daysToAdd == 0) {
-            return this;
-        }
-        return ofJulianDays(toJulianDay() + daysToAdd);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -605,7 +494,7 @@ public final class PersianDate implements ChronoLocalDate {
      */
     @Override
     public boolean isLeapYear() {
-        return isLeapYear(year);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -615,8 +504,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @return {@code true} if the given year is a leap year in Persian calendar.
      */
     public static boolean isLeapYear(final int year) {
-        MyUtils.intRequirePositive(year, "year");
-        return ((year + 2346) * LEAP_THRESHOLD % 1) < LEAP_THRESHOLD;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -643,12 +531,12 @@ public final class PersianDate implements ChronoLocalDate {
      * @return the equivalent Gregorian date as an instance of {@link LocalDate}
      */
     public LocalDate toGregorian() {
-        return LocalDate.from(this);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public long toEpochDay() {
-        return toJulianDay() - JULIAN_DAY_TO_1970;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -661,7 +549,7 @@ public final class PersianDate implements ChronoLocalDate {
      * @see <a href="http://www.fourmilab.ch/documents/calendar/">calendar convertor</a>
      */
     public long toJulianDay() {
-        return toJulianDay(year, month, day);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -674,17 +562,10 @@ public final class PersianDate implements ChronoLocalDate {
      * @see <a href="http://www.fourmilab.ch/documents/calendar/">calendar convertor</a>
      */
     static long toJulianDay(int year, int month, int dayOfMonth) {
-
-        long era = (year - 475) / CYCLE_YEARS;
-        if ((year - 475) < 0) {
-            era--;
-        }
-        final long y_c = (year - 475) - era * CYCLE_YEARS;
-        final long f_d = PERSIAN_DATE_EPOCH + era * CYCLE_DAYS + (long) Math.floor((y_c * YEAR_LENGTH));
-        return f_d + PersianMonth.of(month).daysToFirstOfMonth() + dayOfMonth - 1;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    //-----------------------------------------------------------------------
 
+    //-----------------------------------------------------------------------
     /**
      * Checks if this date is equal to another date.
      * <p>
@@ -695,13 +576,7 @@ public final class PersianDate implements ChronoLocalDate {
      */
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof PersianDate) {
-            return compareTo((PersianDate) obj) == 0;
-        }
-        return false;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -711,11 +586,10 @@ public final class PersianDate implements ChronoLocalDate {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(year, month, day);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     //-----------------------------------------------------------------------
-
     /**
      * Returns the string representation of this persian date. The string contains of ten
      * characters whose format is "XXXX-YY-ZZ", where XXXX is the year, YY is the
@@ -728,6 +602,6 @@ public final class PersianDate implements ChronoLocalDate {
      * @return a suitable representation of this persian date
      */
     public String toString() {
-        return String.format("%04d-%02d-%02d", year, month, day);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

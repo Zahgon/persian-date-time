@@ -29,7 +29,7 @@ public class MyUtils {
      * {@code upperLimit}
      */
     static boolean isBetween(int val, int lowerLimit, int upperLimit) {
-        return val >= lowerLimit && val <= upperLimit;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -43,7 +43,7 @@ public class MyUtils {
      * {@code upperLimit}
      */
     static boolean isBetween(long val, long lowerLimit, long upperLimit) {
-        return val >= lowerLimit && val <= upperLimit;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -58,11 +58,7 @@ public class MyUtils {
      * @return {@code val}, if it is in the range
      */
     static int intRequireRange(int val, int lowerLimit, int upperLimit, String valName) {
-        if (!isBetween(val, lowerLimit, upperLimit)) {
-            throw new IllegalArgumentException(valName + " " + val +
-                    " is out of valid range [" + lowerLimit + ", " + upperLimit + "]");
-        }
-        return val;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -74,10 +70,7 @@ public class MyUtils {
      * @return {@code val}, if it is positive
      */
     static int intRequirePositive(int val, String valName) {
-        if (val <= 0) {
-            throw new IllegalArgumentException(valName + " is not positive: " + val);
-        }
-        return val;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -89,10 +82,7 @@ public class MyUtils {
      * @return {@code val}, if it is positive
      */
     static long longRequirePositive(long val, String valName) {
-        if (val <= 0) {
-            throw new IllegalArgumentException(valName + " is not positive: " + val);
-        }
-        return val;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -107,10 +97,6 @@ public class MyUtils {
      * @return {@code val}, if it is in the range
      */
     static long longRequireRange(long val, long lowerLimit, long upperLimit, String valName) {
-        if (val < lowerLimit || val > upperLimit){
-                throw new IllegalArgumentException(valName + " " + val +
-                        " is out of valid range [" + lowerLimit + ", " + upperLimit + "]");
-            }
-        return val;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

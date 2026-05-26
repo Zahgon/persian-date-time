@@ -1,7 +1,6 @@
 package com.github.mfathi91.time;
 
 import net.jcip.annotations.Immutable;
-
 import java.time.DateTimeException;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -49,7 +48,7 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      * @return an instance of this class with the actual current date and time
      */
     public static PersianDateTime now() {
-        return new PersianDateTime(PersianDate.now(), LocalTime.now());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -60,7 +59,7 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      * @return a new instance of this clas with the given date and time
      */
     public static PersianDateTime of(final PersianDate date, final LocalTime time) {
-        return new PersianDateTime(date, time);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -75,12 +74,8 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      * @return an instance of {@code PersianDateTime}
      * @throws DateTimeException if the passed parameters do not form a valid date or time
      */
-    public static PersianDateTime of(final int year, final PersianMonth month, final int dayOfMonth, final int hour,
-            final int minute) {
-
-        final PersianDate date = PersianDate.of(year, month, dayOfMonth);
-        final LocalTime time = LocalTime.of(hour, minute);
-        return new PersianDateTime(date, time);
+    public static PersianDateTime of(final int year, final PersianMonth month, final int dayOfMonth, final int hour, final int minute) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -95,12 +90,8 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      * @return an instance of {@code PersianDateTime}
      * @throws DateTimeException if the passed parameters do not form a valid date or time
      */
-    public static PersianDateTime of(final int year, final PersianMonth month, final int dayOfMonth, final int hour,
-            final int minute, final int second) {
-
-        final PersianDate date = PersianDate.of(year, month, dayOfMonth);
-        final LocalTime time = LocalTime.of(hour, minute, second);
-        return new PersianDateTime(date, time);
+    public static PersianDateTime of(final int year, final PersianMonth month, final int dayOfMonth, final int hour, final int minute, final int second) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -116,12 +107,8 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      * @return an instance of {@code PersianDateTime}
      * @throws DateTimeException if the passed parameters do not form a valid date or time.
      */
-    public static PersianDateTime of(final int year, final PersianMonth month, final int dayOfMonth, final int hour,
-            final int minute, final int second, final int nanoOfSecond) {
-
-        final PersianDate date = PersianDate.of(year, month, dayOfMonth);
-        final LocalTime time = LocalTime.of(hour, minute, second, nanoOfSecond);
-        return new PersianDateTime(date, time);
+    public static PersianDateTime of(final int year, final PersianMonth month, final int dayOfMonth, final int hour, final int minute, final int second, final int nanoOfSecond) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -136,12 +123,8 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      * @return an instance of {@code PersianDateTime}
      * @throws DateTimeException if the passed parameters do not form a valid date or time.
      */
-    public static PersianDateTime of(final int year, final int month, final int dayOfMonth, final int hour,
-            final int minute) {
-
-        final PersianDate date = PersianDate.of(year, month, dayOfMonth);
-        final LocalTime time = LocalTime.of(hour, minute);
-        return new PersianDateTime(date, time);
+    public static PersianDateTime of(final int year, final int month, final int dayOfMonth, final int hour, final int minute) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -156,12 +139,8 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      * @return an instance of {@code PersianDateTime}
      * @throws DateTimeException if the passed parameters do not form a valid date or time.
      */
-    public static PersianDateTime of(final int year, final int month, final int dayOfMonth, final int hour,
-            final int minute, final int second) {
-
-        final PersianDate date = PersianDate.of(year, month, dayOfMonth);
-        final LocalTime time = LocalTime.of(hour, minute, second);
-        return new PersianDateTime(date, time);
+    public static PersianDateTime of(final int year, final int month, final int dayOfMonth, final int hour, final int minute, final int second) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -177,12 +156,8 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      * @return an instance of {@code PersianDateTime}
      * @throws DateTimeException if the passed parameters do not form a valid date or time.
      */
-    public static PersianDateTime of(final int year, final int month, final int dayOfMonth, final int hour,
-            final int minute, final int second, final int nanoOfSecond) {
-
-        final PersianDate date = PersianDate.of(year, month, dayOfMonth);
-        final LocalTime time = LocalTime.of(hour, minute, second, nanoOfSecond);
-        return new PersianDateTime(date, time);
+    public static PersianDateTime of(final int year, final int month, final int dayOfMonth, final int hour, final int minute, final int second, final int nanoOfSecond) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -193,8 +168,7 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      * @return the corresponding Persian date-time of the given Gregorian date-time
      */
     public static PersianDateTime fromGregorian(final LocalDateTime localDateTime) {
-        Objects.requireNonNull(localDateTime, "localDateTime");
-        return new PersianDateTime(PersianDate.fromGregorian(localDateTime.toLocalDate()), localDateTime.toLocalTime());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -208,7 +182,7 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      * @see DateTimeFormatter#ISO_LOCAL_DATE_TIME
      */
     public static PersianDateTime parse(final CharSequence text) {
-        return parse(text, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -221,8 +195,7 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      * @see DateTimeFormatter
      */
     public static PersianDateTime parse(final CharSequence text, final DateTimeFormatter formatter) {
-        Objects.requireNonNull(formatter, "formatter");
-        return formatter.withChronology(PersianChronology.INSTANCE).parse(text, PersianDateTime::from);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -233,19 +206,7 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      * @throws DateTimeException if unable to convert to a {@code PersianDate}
      */
     public static PersianDateTime from(final TemporalAccessor temporal) {
-        Objects.requireNonNull(temporal, "temporal");
-        if (temporal instanceof PersianDateTime) {
-            return (PersianDateTime) temporal;
-        } else {
-            try {
-                final PersianDate date = PersianDate.from(temporal);
-                final LocalTime time = LocalTime.from(temporal);
-                return new PersianDateTime(date, time);
-            } catch (final DateTimeException ex) {
-                throw new DateTimeException(
-                        String.format("Unable to parse PersianDateTime from TemporalAccessor: %s", temporal), ex);
-            }
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -266,7 +227,7 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      */
     @Override
     public PersianDate toLocalDate() {
-        return date;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -276,7 +237,7 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      */
     @Override
     public LocalTime toLocalTime() {
-        return time;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -286,12 +247,12 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      * @return the corresponding Gregorian date-time of this Persian date-time
      */
     public LocalDateTime toGregorian() {
-        return LocalDateTime.of(date.toGregorian(), time);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public boolean isSupported(final TemporalField field) {
-        return false;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -304,65 +265,43 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      */
     @Override
     public long getLong(final TemporalField field) {
-        Objects.requireNonNull(field, "field");
-        if (field instanceof ChronoField) {
-            final ChronoField chronoField = (ChronoField) field;
-            return (chronoField.isTimeBased() ? time.getLong(field) : date.getLong(field));
-        }
-        return field.getFrom(this);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public ChronoLocalDateTime<PersianDate> with(final TemporalField field, final long newValue) {
-        throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public ChronoLocalDateTime<PersianDate> plus(final long amountToAdd, final TemporalUnit temporalUnit) {
-        throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public long until(final Temporal temporal, final TemporalUnit temporalUnit) {
-        throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public ChronoZonedDateTime<PersianDate> atZone(final ZoneId zoneId) {
-        throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     //-----------------------------------------------------------------------
-
     @Override
     public int compareTo(final ChronoLocalDateTime<?> other) {
-
-        int result = 0;
-        if (other instanceof PersianDateTime) {
-            final PersianDateTime otherPersianDateTime = (PersianDateTime) other;
-            result = date.compareTo(otherPersianDateTime.date);
-            if (result == 0) {
-                result = time.compareTo(otherPersianDateTime.time);
-            }
-        }
-        return result;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public boolean equals(final Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof PersianDateTime) {
-            return compareTo((PersianDateTime) obj) == 0;
-        }
-        return false;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(date, time);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -380,6 +319,6 @@ public final class PersianDateTime implements ChronoLocalDateTime<PersianDate> {
      * @see LocalTime#toString()
      */
     public String toString() {
-        return String.format("%sT%s", date, time);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

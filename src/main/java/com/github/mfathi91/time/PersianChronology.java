@@ -1,7 +1,6 @@
 package com.github.mfathi91.time;
 
 import net.jcip.annotations.Immutable;
-
 import java.time.DateTimeException;
 import java.time.chrono.AbstractChronology;
 import java.time.chrono.ChronoLocalDate;
@@ -10,7 +9,6 @@ import java.time.temporal.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-
 import static java.time.temporal.ChronoField.YEAR;
 
 /**
@@ -28,13 +26,13 @@ import static java.time.temporal.ChronoField.YEAR;
  */
 @Immutable
 public final class PersianChronology extends AbstractChronology {
+
     /**
      * Single instance of this class.
      */
     public static final PersianChronology INSTANCE = new PersianChronology();
 
     //-----------------------------------------------------------------------
-
     /**
      * Restricted constructor.
      */
@@ -42,7 +40,6 @@ public final class PersianChronology extends AbstractChronology {
     }
 
     //-----------------------------------------------------------------------
-
     /**
      * Checks whther parameter {@code value} is valid or not. If {@code value} is out
      * of range, an DateTimeException will be thrown with a suitable message.
@@ -50,14 +47,7 @@ public final class PersianChronology extends AbstractChronology {
      * @param value value to check
      */
     void checkValidValue(long value, TemporalField field) {
-        Objects.requireNonNull(field, "field");
-        if(!(field instanceof ChronoField)){
-            throw new DateTimeException("Parameter 'field' is not supported");
-        }
-        ChronoField cf = (ChronoField) field;
-        if(!MyUtils.isBetween(value, range(cf).getMinimum(), range(cf).getMaximum())){
-            throw new DateTimeException("Invalid value for " + field + ", valid values: " + range(cf));
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -70,15 +60,10 @@ public final class PersianChronology extends AbstractChronology {
      * @param dayOfYear the day-of-year to be checked, from 1 to 365 or 366 in a leap year
      */
     void checkDayOfYear(int year, int dayOfYear) {
-        checkValidValue(year, YEAR);
-        int maxDayOfYear = isLeapYear(year) ? 366 : 365;
-        if(!MyUtils.isBetween(dayOfYear, 1, maxDayOfYear)){
-            throw new DateTimeException("Invalid value for dayOfYear: " + dayOfYear + " ");
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     //-----------------------------------------------------------------------
-
     /**
      * Gets the ID of the chronology.
      *
@@ -87,7 +72,7 @@ public final class PersianChronology extends AbstractChronology {
      */
     @Override
     public String getId() {
-        return "Persian";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -99,7 +84,7 @@ public final class PersianChronology extends AbstractChronology {
      */
     @Override
     public String getCalendarType() {
-        return "persian";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -114,7 +99,7 @@ public final class PersianChronology extends AbstractChronology {
      */
     @Override
     public PersianDate date(int prolepticYear, int month, int dayOfMonth) {
-        return PersianDate.of(prolepticYear, month, dayOfMonth);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -128,8 +113,7 @@ public final class PersianChronology extends AbstractChronology {
      */
     @Override
     public PersianDate dateYearDay(int prolepticYear, int dayOfYear) {
-        checkDayOfYear(prolepticYear, dayOfYear);
-        return PersianDate.of(prolepticYear, 1, 1).plusDays(dayOfYear - 1);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -144,7 +128,7 @@ public final class PersianChronology extends AbstractChronology {
      */
     @Override
     public PersianDate dateEpochDay(long epochDay) {
-        return PersianDate.ofEpochDay(epochDay);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -167,10 +151,7 @@ public final class PersianChronology extends AbstractChronology {
      */
     @Override
     public PersianDate date(TemporalAccessor temporal) {
-        if (temporal instanceof PersianDate) {
-            return (PersianDate) temporal;
-        }
-        return PersianDate.ofJulianDays(JulianFields.JULIAN_DAY.getFrom(temporal));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -182,8 +163,7 @@ public final class PersianChronology extends AbstractChronology {
      */
     @Override
     public boolean isLeapYear(long year) {
-        checkValidValue(year, YEAR);
-        return PersianDate.isLeapYear((int) year);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -199,11 +179,8 @@ public final class PersianChronology extends AbstractChronology {
      * @throws ClassCastException if the {@code era} is not of the correct type for the chronology
      */
     @Override
-    public int  prolepticYear(Era era, int yearOfEra) {
-        if (!(era instanceof PersianEra)) {
-            throw new ClassCastException("Era must be PersianEra");
-        }
-        return yearOfEra;
+    public int prolepticYear(Era era, int yearOfEra) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -222,10 +199,7 @@ public final class PersianChronology extends AbstractChronology {
      */
     @Override
     public Era eraOf(int eraValue) {
-        if (eraValue == 1) {
-            return PersianEra.AHS;
-        }
-        throw new DateTimeException("invalid Persian era");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -235,7 +209,7 @@ public final class PersianChronology extends AbstractChronology {
      */
     @Override
     public List<Era> eras() {
-        return Arrays.asList(PersianEra.values());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -256,20 +230,6 @@ public final class PersianChronology extends AbstractChronology {
      */
     @Override
     public ValueRange range(ChronoField field) {
-        switch (field) {
-            case DAY_OF_MONTH:
-                return ValueRange.of(1, 1, 29, 31);
-            case DAY_OF_YEAR:
-                return ValueRange.of(1, 1, 365, 366);
-            case ALIGNED_WEEK_OF_MONTH:
-                return ValueRange.of(1, 5);
-            case YEAR:
-            case YEAR_OF_ERA:
-                return ValueRange.of(1, 1999);
-            case ERA:
-                return ValueRange.of(1, 1);
-            default:
-                return field.range();
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }
